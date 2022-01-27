@@ -1,19 +1,27 @@
-from tkinter import*
-import main
 
-def se_ravitailler():
-    window = Tk()
-    window.title("Gestion")
-    
-    myFrame = Frame(window,bg="gray",borderwidth=10, width=990, height=300 , bd=2, relief="solid")
-    myFrame.pack(padx=0, pady=20, fill='both', expand=True)
-    myLabelProd = Label(window, text="Produit")
-    myEntryProd = Entry(myFrame ,font="solid")
-    myLabelQte = Label(myFrame,  text="Quantite")
-    myEntryQte = Entry(myFrame, width=40)
-    
-    myLabelProd.pack()
-    myEntryProd.pack()
-
-    myLabelQte.pack()
-    myEntryQte.pack()
+# importing only those functions
+# which are needed
+from tkinter import * 
+from tkinter.ttk import *
+  
+# creating tkinter window
+root = Tk()
+  
+# Adding widgets to the root window
+Label(root, text = 'GeeksforGeeks', font =(
+  'Verdana', 15)).pack(side = TOP, pady = 10)
+  
+# Creating a photoimage object to use image
+photo = PhotoImage(file = r"C:\Gfg\circle.png")
+  
+# Resizing image to fit on button
+photoimage = photo.subsample(3, 3)
+  
+# here, image option is used to
+# set image on button
+# compound option is used to align
+# image on LEFT side of button
+Button(root, text = 'Click Me !', image = photoimage,
+                    compound = LEFT).pack(side = TOP)
+  
+mainloop()
